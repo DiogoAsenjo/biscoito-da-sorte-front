@@ -1,20 +1,34 @@
-import logo from "./logo.svg";
+import { useEffect, useState } from "react";
 import "./App.css";
+import { api } from "./api";
+
 
 function App() {
+  const [fraseDaSorte, setFraseDaSorte] = useState("");
+  const [error, setError] = useState(null);
+
+  const handleClick = () => {
+    console.log("Botão clicado"); // Adicione esta linha
+    api
+      .get("/cookies/aleatorio")
+      .then((response) => {
+        setFraseDaSorte(response.data);
+        console.log(fraseDaSorte);
+        setError(null);
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error);
+      });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Eai, Gabriel, beleza?</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Fiz algumas modificações no meu projeto
-        </a>
+    <div>
+      <header>
+        <p>Seja bem vindo ao meu projeto de biscoitos da sorte!</p>
+        <p>Clique no botão para tirar uma frase da sorte</p>
+        <button onClick={handleClick}>Frase da sorte</button>
+        {fraseDaSorte && <p>{fraseDaSorte}</p>}
       </header>
     </div>
   );
