@@ -24,7 +24,7 @@ function App() {
   return (
     <div>
       <header>
-        <p>Clique no botão para tirar uma frase da sorte</p>
+        <p>Clique no botão para tirar uma frase da sorte!</p>
         <button onClick={handleClick}>Frase da sorte</button>
         {fraseDaSorte && <p>{fraseDaSorte}</p>}
       </header>
