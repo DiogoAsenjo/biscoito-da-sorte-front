@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import { api } from "./api";
 
-
 function App() {
   const [fraseDaSorte, setFraseDaSorte] = useState("");
   const [, setError] = useState(null);
@@ -13,19 +12,18 @@ function App() {
       .get("/cookies/aleatorio")
       .then((response) => {
         setFraseDaSorte(response.data);
-        console.log(fraseDaSorte);
         setError(null);
       })
       .catch((error) => {
-        console.log(error);
         setError(error);
+        console.log(error);
       });
   };
 
   return (
-    <section>
-      <div>
-        <p>Clique no botão para tirar uma frase da sorte</p>
+    <div>
+      <header>
+        <p>Clique no botão para tirar uma frase da sorte!</p>
         <button onClick={handleClick}>Frase da sorte</button>
         {fraseDaSorte && <p>{fraseDaSorte}</p>}
       </div>
