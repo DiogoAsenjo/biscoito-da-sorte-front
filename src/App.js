@@ -13,7 +13,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Será que a pipeline funcionou?
+          TÁ AQUI A PIPELINE FUNCIONANDO TROUXA
         </a>
       </header>
     </div>
