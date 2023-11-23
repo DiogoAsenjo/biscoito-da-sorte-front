@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { api } from "./api";
 
+
 function App() {
   const [fraseDaSorte, setFraseDaSorte] = useState("");
   const [error, setError] = useState(null);
