@@ -1,1 +1,28 @@
+section {
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
+p {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+button {
+  padding: 15px;
+  border-radius: 13px;
+  font-size: 30px;
+  background-color: #a18cd1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #885fb2; /* Cor alterada ao passar o mouse (hover) */
+}
