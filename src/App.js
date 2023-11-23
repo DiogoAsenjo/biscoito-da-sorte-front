@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { api } from "./api";
 
 function App() {
   const [fraseDaSorte, setFraseDaSorte] = useState("");
-  const [error, setError] = useState(null);
+  const [, setError] = useState(null);
 
   const handleClick = () => {
     console.log("Botão clicado"); // Adicione esta linha
@@ -12,12 +12,11 @@ function App() {
       .get("/cookies/aleatorio")
       .then((response) => {
         setFraseDaSorte(response.data);
-        console.log(fraseDaSorte);
         setError(null);
       })
       .catch((error) => {
-        console.log(error);
         setError(error);
+        console.log(error);
       });
   };
 
